@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rider
+  labels:
+    app: rider
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rider
+  template:
+    metadata:
+      labels:
+        app: rider
+    spec:
+      containers:
+        - name: rider
+          image: username/rider:latest
+          ports:
+            - containerPort: 8084
+        
